@@ -1,0 +1,4 @@
+** (KeyError) key :currency not found in: %{id: "ord_8842"}
+    (shop 0.1.0) lib/shop/orders/process.ex:42: Shop.Orders.Process.charge/1
+    (shop 0.1.0) lib/shop_web/controllers/order_controller.ex:88: ShopWeb.OrderController.create/2
+    (phoenix 1.7.10) lib/phoenix/controller/pipeline.ex:30: Phoenix.Controller.Pipeline.action/2

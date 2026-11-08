@@ -1,0 +1,9 @@
+Exception in thread "main" java.lang.IllegalStateException: order has no currency
+	at com.acme.shop.orders.OrderService.charge(OrderService.java:42)
+	at com.acme.shop.orders.OrderService$Retry.run(OrderService.java:71)
+	at com.acme.shop.api.OrderController.createOrder(OrderController.kt:88)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: currency
+	at com.acme.shop.orders.Money.of(Money.java:19)
+	... 12 more

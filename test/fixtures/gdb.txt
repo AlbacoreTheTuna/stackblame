@@ -1,0 +1,8 @@
+Program received signal SIGSEGV, Segmentation fault.
+0x000055555555513d in charge (o=0x0) at src/orders/process.c:42
+42	    return o->total * rate;
+(gdb) bt
+#0  0x000055555555513d in charge (o=0x0) at src/orders/process.c:42
+#1  0x0000555555555171 in create_order (req=0x7fffffffe0a0) at src/api/routes.c:88
+#2  0x00007ffff7dd8d90 in __libc_start_call_main () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x0000555555555189 in main () at src/main.c:17

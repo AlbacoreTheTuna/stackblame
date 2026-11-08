@@ -1,0 +1,51 @@
+{
+  "name": "stackblame",
+  "version": "0.1.0",
+  "description": "git blame for stack traces. Paste a crash, get the commits, authors and PRs that most likely caused it.",
+  "keywords": [
+    "stack-trace",
+    "stacktrace",
+    "git",
+    "blame",
+    "debugging",
+    "incident",
+    "on-call",
+    "suspect-commits",
+    "cli",
+    "traceback",
+    "panic",
+    "exception"
+  ],
+  "license": "MIT",
+  "author": "AlbacoreTheTuna",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbacoreTheTuna/stackblame.git"
+  },
+  "bugs": "https://github.com/AlbacoreTheTuna/stackblame/issues",
+  "homepage": "https://github.com/AlbacoreTheTuna/stackblame#readme",
+  "type": "module",
+  "bin": {
+    "stackblame": "bin/stackblame.js"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "lint": "node --check bin/stackblame.js && for f in src/*.js; do node --check \"$f\"; done",
+    "demo": "node bin/stackblame.js test/fixtures/node.txt"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

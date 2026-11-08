@@ -1,0 +1,4 @@
+/app/lib/orders/process.rb:42:in `charge': undefined method `currency' for nil (NoMethodError)
+	from /app/app/controllers/orders_controller.rb:88:in `create'
+	from /usr/local/bundle/gems/actionpack-7.1.0/lib/action_controller/metal/basic_implicit_render.rb:6:in 'ActionController::BasicImplicitRender#send_action'
+	from /app/config.ru:5:in 'block in <main>'

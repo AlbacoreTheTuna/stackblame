@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/app/app/api/routes.py", line 88, in create_order
+    return charge(order)
+  File "/app/app/orders/process.py", line 42, in charge
+    raise ChargeError(order.id)
+           ^^^^^^^^^^^^^^^^^^^^
+app.orders.errors.ChargeError: ord_8842

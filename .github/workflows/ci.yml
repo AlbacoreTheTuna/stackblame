@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: node ${{ matrix.node }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: git --version
+      - run: npm run lint
+      - run: npm test
+
+  smoke:
+    name: npx smoke test on a real repo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # A fake crash inside this very repository: every frame should resolve.
+      - run: |
+          printf 'Error: boom\n    at parseTrace (/work/stackblame/src/parse.js:3:1)\n    at analyze (/work/stackblame/src/index.js:5:1)\n' \
+            | node bin/stackblame.js --json > out.json
+          node -e "const r=require('./out.json'); if (r.stats.resolved!==2||!r.suspects.length) {console.error(JSON.stringify(r.stats)); process.exit(1)}"

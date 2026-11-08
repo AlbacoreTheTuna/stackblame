@@ -1,0 +1,6 @@
+Unhandled exception:
+Null check operator used on a null value
+#0      charge (package:shop/orders/process.dart:42:5)
+#1      createOrder (package:shop/api/routes.dart:88:12)
+#2      main (file:///app/bin/main.dart:17:3)
+#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:297:19)

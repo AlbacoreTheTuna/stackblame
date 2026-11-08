@@ -1,0 +1,4 @@
+error: compilation failed
+  --> src/orders/process.swift:42:17
+  --> src/api/routes.swift:88:3
+see https://example.com/docs:8080/x for details

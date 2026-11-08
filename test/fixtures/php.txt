@@ -1,0 +1,7 @@
+PHP Fatal error:  Uncaught RuntimeException: order has no currency in /var/www/html/src/Orders/Process.php:42
+Stack trace:
+#0 /var/www/html/src/Api/Routes.php(88): Acme\Orders\Process->charge(Object(Acme\Orders\Order))
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): Acme\Api\Routes->createOrder()
+#2 /var/www/html/public/index.php(17): Illuminate\Foundation\Http\Kernel->handle()
+#3 {main}
+  thrown in /var/www/html/src/Orders/Process.php on line 42

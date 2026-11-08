@@ -1,0 +1,8 @@
+TypeError: Cannot read properties of undefined (reading 'currency')
+    at charge (/usr/src/app/dist/orders/process.js:42:31)
+    at async createOrder (/usr/src/app/dist/api/routes.js:88:18)
+    at async Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at new Promise (<anonymous>)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.<anonymous> (file:///usr/src/app/dist/index.mjs:9:3)
+    at /usr/src/app/dist/boot.js:12:7

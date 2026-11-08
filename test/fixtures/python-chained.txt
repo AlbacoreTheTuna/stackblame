@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/app/app/db.py", line 10, in connect
+    return pool.get()
+KeyError: 'pool'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/app/main.py", line 30, in <module>
+    run()
+  File "/app/app/main.py", line 21, in run
+    db.connect()
+  File "/app/app/db.py", line 12, in connect
+    raise DbError("no pool") from e
+app.db.DbError: no pool

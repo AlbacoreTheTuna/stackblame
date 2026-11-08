@@ -1,0 +1,5 @@
+Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
+   at Acme.Shop.Orders.OrderService.Charge(Order order) in /src/Shop/Orders/OrderService.cs:line 42
+   at Acme.Shop.Api.OrdersController.CreateOrder(OrderRequest req) in /src/Shop/Api/OrdersController.cs:line 88
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Program.<Main>$(String[] args) in /src/Shop/Program.cs:line 17
