@@ -42,7 +42,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test \"test/**/*.test.js\"",
+    "test": "node --test test/*.test.js",
     "lint": "node --check bin/stackblame.js && for f in src/*.js; do node --check \"$f\"; done",
     "demo": "node bin/stackblame.js test/fixtures/node.txt"
   },
