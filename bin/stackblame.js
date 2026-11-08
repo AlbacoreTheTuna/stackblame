@@ -9,7 +9,7 @@ const { version } = createRequire(import.meta.url)('../package.json');
 const HELP = `stackblame ${version} — git blame for stack traces
 
 Usage
-  stackblame [trace-file] [options]
+  stackblame [trace-file] [options]      (or: git stackblame, when installed globally)
   <command-that-crashes> 2>&1 | stackblame
   pbpaste | stackblame            # macOS clipboard
   xclip -o | stackblame           # Linux clipboard

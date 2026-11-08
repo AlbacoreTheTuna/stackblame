@@ -3,12 +3,12 @@
 **`git blame` for stack traces.** Paste a crash, get the commits that most likely caused it.
 
 [![CI](https://github.com/AlbacoreTheTuna/stackblame/actions/workflows/ci.yml/badge.svg)](https://github.com/AlbacoreTheTuna/stackblame/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/stackblame.svg)](https://www.npmjs.com/package/stackblame)
+[![npm](https://img.shields.io/npm/v/git-stackblame.svg)](https://www.npmjs.com/package/git-stackblame)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)
 
 ```sh
-kubectl logs api-7f9c4 | npx stackblame --since 7d
+kubectl logs api-7f9c4 | npx git-stackblame --since 7d
 ```
 
 ![stackblame demo](docs/demo.svg)
@@ -24,11 +24,11 @@ You already do this by hand during every incident: copy a path and line number o
 ## Install
 
 ```sh
-npx stackblame            # no install
-npm i -g stackblame       # or install globally
+npx git-stackblame             # no install
+npm i -g git-stackblame        # installs both `stackblame` and `git stackblame`
 ```
 
-Requires Node 18+ and `git` on your PATH. Run it from anywhere inside the repository the trace came from (or point at it with `-C`).
+Installed globally, git picks it up as a subcommand, so `git stackblame crash.txt` works like any other git command. Requires Node 18+ and `git` on your PATH. Run it from anywhere inside the repository the trace came from (or point at it with `-C`).
 
 ## Usage
 
@@ -111,7 +111,7 @@ kubectl logs api-7f9c4 | stackblame --strip /usr/src/app --rev v2.41.0
 It's also available as a library:
 
 ```js
-import { analyze, parseTrace } from 'stackblame';
+import { analyze, parseTrace } from 'git-stackblame';
 
 const result = await analyze(traceText, { cwd: '/work/shop', since: '7d' });
 console.log(result.suspects[0]);
@@ -129,7 +129,7 @@ Turn a red test job into a pointer at the commit to look at. On a pull request, 
 
 - name: Who broke it?
   if: steps.tests.outcome == 'failure'
-  run: npx stackblame test.log --base origin/${{ github.base_ref }} --no-color
+  run: npx git-stackblame test.log --base origin/${{ github.base_ref }} --no-color
 ```
 
 Needs `fetch-depth: 0` on `actions/checkout` so the history is available.

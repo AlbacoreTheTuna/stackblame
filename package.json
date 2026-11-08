@@ -1,8 +1,9 @@
 {
-  "name": "stackblame",
+  "name": "git-stackblame",
   "version": "0.1.0",
-  "description": "git blame for stack traces. Paste a crash, get the commits, authors and PRs that most likely caused it.",
+  "description": "git blame for stack traces. Paste a crash, get the commits, authors and PRs that most likely caused it. Also works as `git stackblame`.",
   "keywords": [
+    "git-subcommand",
     "stack-trace",
     "stacktrace",
     "git",
@@ -26,7 +27,8 @@
   "homepage": "https://github.com/AlbacoreTheTuna/stackblame#readme",
   "type": "module",
   "bin": {
-    "stackblame": "bin/stackblame.js"
+    "stackblame": "bin/stackblame.js",
+    "git-stackblame": "bin/stackblame.js"
   },
   "main": "src/index.js",
   "exports": {
